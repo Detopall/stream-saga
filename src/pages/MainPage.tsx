@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SearchBar from "../components/SearchBar";
 
 function MainPage() {
 	return (
@@ -11,10 +12,7 @@ function MainPage() {
 				</div>
 				<h1> Stream Saga </h1>
 
-				<div className="main-page__search">
-					<input type="text" placeholder="Search" />
-					<button> Search </button>
-				</div>
+				<SearchBar />
 			</section>
 
 			<div className="main-page__home-button">

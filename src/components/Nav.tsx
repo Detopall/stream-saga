@@ -1,4 +1,10 @@
+import { useLocation } from "react-router-dom";
+import SearchBar from "./SearchBar";
+
 function Nav() {
+	const location = useLocation();
+	const isMainPage = location.pathname === "/";
+
 	return (
 		<>
 			<nav className="navbar">
@@ -14,6 +20,9 @@ function Nav() {
 					<li>
 						<a href="/home">Home</a>
 					</li>
+
+					{ isMainPage ? null : <SearchBar /> }
+
 					<li>
 						<a href="/about">About</a>
 					</li>

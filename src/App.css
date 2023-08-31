@@ -173,12 +173,13 @@ b {
 
 /* Styling for individual show cards */
 .home-page__show {
+	flex: 0 0 calc(10% - 20px);
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	padding: 10px;
-	max-width: 300px;
 	text-align: center;
 	cursor: pointer;
+	margin-bottom: 20px;
 }
 
 .home-page__show:hover {
@@ -212,6 +213,35 @@ b {
 	color: white;
 }
 
+.pages {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+.pages button.current {
+	background-color: #0000ff;
+	color: black;
+}
+
+.pages button {
+	padding: 10px 15px;
+	margin: 0 5px;
+	background-color: var(--primary-color);
+	color: black;
+	font-weight: bold;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.pages button:hover {
+	background-color: #ff66ff;
+	color: white;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
 	.search {
@@ -238,7 +268,7 @@ b {
 	}
 
 	.home-page__show {
-		max-width: 100%;
+		flex: 0 0 calc(40% - 20px);
 	}
 
 	.home-page__show img {

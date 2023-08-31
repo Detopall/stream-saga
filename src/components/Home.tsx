@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PageNav from "../components/PageNav";
 
 function Home() {
-	const popularData = {
+	const [popularData, setPopularData] = useState({
 		total: "24332",
 		page: 1,
 		pages: 1217,
@@ -55,23 +56,23 @@ function Home() {
 					"https://static.episodate.com/images/tv-show/thumbnail/32157.jpg",
 			},
 		],
-	};
+	});
 
-	async function fetchPopularList() {
-		const [page, setPage] = useState(1);
-
-		/*
-		const response = await fetch(
-			`https://www.episodate.com/api/most-popular?page=${page}`
-		);
-		*/
-
-		//const popularData = await response.json();
-
-		console.log(popularData);
+	async function fetchPopularList(page: number) {
+		try {
+			const response = await fetch(
+				`https://www.episodate.com/api/most-popular?page=${page}`
+			);
+			const data = await response.json();
+			setPopularData(data);
+		} catch (error) {
+			console.error("Error fetching data:", error);
+		}
 	}
 
-	fetchPopularList();
+	useEffect(() => {
+		fetchPopularList(popularData.page);
+	}, [popularData.page]);
 
 	return (
 		<>
@@ -94,6 +95,13 @@ function Home() {
 					);
 				})}
 			</section>
+			<PageNav
+				currentPage={popularData.page}
+				totalPages={popularData.pages}
+				onPageChange={(newPage) =>
+					setPopularData({ ...popularData, page: newPage })
+				}
+			/>
 		</>
 	);
 }

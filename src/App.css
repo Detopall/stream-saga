@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap');
+
+:root {
+	--primary-color: #cc00cc;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	color: white;
+	font-family: 'DM Sans', sans-serif;
+}
+
+/* Navbar */
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+
+.navbar li {
+	list-style: none;
+}
+
+.navbar__logo img {
+	max-width: 65px;
+	border: white 0.2rem solid;
+	border-radius: 1rem;
+}
+
+.navbar__links {
+	display: flex;
+	align-items: center;
+}
+
+.navbar__links a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.2rem;
+	margin-left: 20px;
+}
+
+.navbar__links a:hover {
+	color: var(--primary-color);
+}
+
+/* MainPage.css */
+
+.main-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: black;
+	padding: 20px;
+}
+
+.main-page__logo img {
+	max-width: 100px;
+	border: white 0.2rem solid;
+	border-radius: 1rem;
+}
+
+/* Heading */
+h1 {
+	font-size: 2rem;
+	margin: 10px 0;
+}
+
+b {
+	color: var(--primary-color);
+}
+
+/* Search bar */
+.main-page__search {
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+	width: 80%;
+}
+
+.main-page__search input[type="text"] {
+	padding: 8px 2rem;
+	border: none;
+	border-radius: 4px 0 0 4px;
+	flex: 1;
+	background-color: white;
+	color: black;
+	font-size: 1.5rem;
+}
+
+.main-page__search button {
+	background-color: var(--primary-color);
+	color: black;
+	font-weight: bold;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 0 4px 4px 0;
+	cursor: pointer;
+	font-size: 1.5rem;
+}
+
+/* Home button */
+.main-page__home-button {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.main-page__home-button button {
+	background-color: var(--primary-color);
+	color: black;
+	font-weight: bold;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+/* Description */
+.main-page__description {
+	margin-top: 20px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+}

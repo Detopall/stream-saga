@@ -1,6 +1,28 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+function addWatchedEpisode(showId: number, season: number, episode: number) {
+	const storedData = JSON.parse(
+		localStorage.getItem("watchedEpisodes") || "{}"
+	);
+
+	storedData[showId] = storedData[showId] || {};
+	storedData[showId]["season"] = storedData[showId]["season"] || {};
+	storedData[showId]["season"][season] =
+		storedData[showId]["season"][season] || [];
+
+	storedData[showId]["season"][season].push(episode);
+
+	localStorage.setItem("watchedEpisodes", JSON.stringify(storedData));
+}
+
+function isEpisodeWatched(showId: number, season: number, episode: number) {
+	const storedData = JSON.parse(
+		localStorage.getItem("watchedEpisodes") || "{}"
+	);
+	return storedData[showId]?.season?.[season]?.includes(episode) || false;
+}
+
 interface IShowDetails {
 	id: number;
 	name: string;
@@ -60,11 +82,25 @@ function ShowPage() {
 		setSelectedSeason(season);
 	}
 
+	function handleEpisodeClick(
+		e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+		episodeNumber: number,
+		seasonNumber: number
+	) {
+		if (!e.target) return;
+		const showId = details?.id;
+
+		if (!showId || !seasonNumber) return;
+
+		// Add the episode to the watched episodes
+		addWatchedEpisode(showId, seasonNumber, episodeNumber);
+	}
+
 	return (
 		<div className="show-page">
 			{details ? (
 				<>
-					<img src={details.image_path} alt={details.name} />
+					<img src={details.image_path} alt={details.name} id="main"/>
 					<div className="show-page__description">
 						<h1>
 							<a
@@ -148,7 +184,29 @@ function ShowPage() {
 											{episode.episode} {"-"}{" "}
 											{episode.name}
 										</p>
-										<button>Watch</button>
+										<button
+											onClick={(e) =>
+												handleEpisodeClick(
+													e,
+													episode.episode,
+													selectedSeason || 0
+												)
+											}
+											data-show={details.id}
+											data-episode={episode.episode}
+											data-season={episode.season}
+											className={
+												isEpisodeWatched(
+													details.id,
+													selectedSeason || 0,
+													episode.episode
+												)
+													? "watched"
+													: ""
+											}
+										>
+											Watch
+										</button>
 									</div>
 								))}
 						</div>

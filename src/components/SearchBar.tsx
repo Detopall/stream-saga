@@ -17,7 +17,7 @@ function SearchBar({ setShowsData }: { setShowsData: SetShowsDataFunction }) {
 		<>
 			<div className="search">
 				<form onSubmit={handleSubmit}>
-					<input type="text" placeholder="Search" />
+					<input type="text" placeholder="Search" required/>
 					<button type="submit"> Search </button>
 				</form>
 			</div>

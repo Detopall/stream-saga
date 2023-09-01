@@ -62,6 +62,10 @@
 	font-size: 1.3rem;
 }
 
+.navbar .search button:active {
+	background-color: var(--blue);
+}
+
 .navbar__logo img {
 	max-width: 65px;
 	border: white 0.2rem solid;
@@ -139,6 +143,10 @@ b {
 	font-size: 1.5rem;
 }
 
+.main-page .search form button:active {
+	background-color: var(--blue);
+}
+
 /* Home button */
 .main-page__home-button {
 	text-align: center;
@@ -154,6 +162,10 @@ b {
 	border-radius: 4px;
 	font-size: 1.2rem;
 	cursor: pointer;
+}
+
+.main-page__home-button button:active {
+	background-color: var(--blue);
 }
 
 /* Description */
@@ -175,7 +187,7 @@ b {
 
 /* Styling for individual show cards */
 .home-page__show {
-	flex: 0 0 calc(15% - 20px);
+	flex: 0 0 calc(10% - 20px);
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	padding: 10px;
@@ -258,6 +270,7 @@ b {
 .show-page img {
 	grid-row: 1 / span 2;
 	width: 100%;
+	max-width: 35rem;
 	height: auto;
 	border-radius: 4px;
 }
@@ -385,6 +398,18 @@ b {
 
 .episode button:hover {
 	background-color: var(--primary-color-hover);
+}
+
+.episode button:active {
+	background-color: var(--blue);
+	color: #fff;
+	font-weight: bold;
+}
+
+.episode button.watched {
+	background-color: var(--blue);
+	color: #fff;
+	font-weight: bold;
 }
 
 /* Responsive styles */

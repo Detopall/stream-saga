@@ -17,7 +17,7 @@ Stream Saga is a web application that allows users to explore and keep track of 
 
 ## Getting Started
 
-``bash
+```bash
 git clone https://github.com/Detopall/stream-saga.git
 
 cd stream-saga
@@ -25,7 +25,7 @@ cd stream-saga
 npm install
 
 npm run dev
-``
+```
 
 ``Using Vite you can access the application at http://localhost:5173/``
 

@@ -23,10 +23,6 @@ function Nav({ setShowsData }: { setShowsData: SetShowsDataFunction }) {
 					</li>
 
 					{ isMainPage ? null : <SearchBar setShowsData={setShowsData} /> }
-
-					<li>
-						<a href="/about">About</a>
-					</li>
 				</ul>
 			</nav>
 		</>

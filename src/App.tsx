@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Nav from "./components/Nav";
 import MainPage from "./pages/MainPage";
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
 import ShowPage from "./pages/ShowPage";
 
 export type SetShowsDataFunction = (data: IShow | undefined) => void;
@@ -50,7 +49,6 @@ function App() {
 				/>
 				<Route path="/home" element={<HomePage showsData={showsData} setShowsData={setShowsData} />} />
 				<Route path="/show/:id" element={<ShowPage />} />
-				<Route path="/about" element={<AboutPage />} />
 			</Routes>
 		</div>
 	);

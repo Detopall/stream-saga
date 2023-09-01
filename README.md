@@ -31,8 +31,8 @@ npm run dev
 
 ## Screenshots
 
-**still working on this section**
-
 ![Stream Saga Main Page](./readme-images/main-page.png)
 
 ![Stream Saga Home Page](./readme-images/home-page.png)
+
+![Stream Saga Show Page](./readme-images/show-page.png)

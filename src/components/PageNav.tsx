@@ -29,9 +29,6 @@ function PageNav({ currentPage, totalPages, onPageChange }: PageNavProps) {
 					<button onClick={() => goToPage(currentPage + 1)}>
 						{currentPage + 1}
 					</button>
-					<button onClick={() => goToPage(currentPage + 2)}>
-						{currentPage + 2}
-					</button>
 				</>
 			)}
 			{currentPage !== totalPages && (

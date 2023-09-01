@@ -4,7 +4,6 @@ function SearchBar({ setShowsData }: { setShowsData: SetShowsDataFunction }) {
 	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		const input = e.currentTarget.elements[0] as HTMLInputElement;
-		console.log(input.value);
 		if (!input.value) return;
 
 		const response = await fetch(

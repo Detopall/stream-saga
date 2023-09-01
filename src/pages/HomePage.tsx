@@ -1,9 +1,10 @@
 import Home from "../components/Home";
+import { SetShowsDataFunction, IShow } from "../App";
 
-function HomePage() {
+function HomePage({ showsData, setShowsData }: { showsData: IShow | undefined; setShowsData: SetShowsDataFunction}) {
 	return (
 		<>
-			<Home />
+			<Home showsData={showsData} setShowsData={setShowsData}/>
 		</>
 	);
 }

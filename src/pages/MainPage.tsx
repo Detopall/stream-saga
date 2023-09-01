@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
+import { SetShowsDataFunction } from "../App";
 
-function MainPage() {
+function MainPage({ setShowsData }: { setShowsData: SetShowsDataFunction }) {
 	return (
 		<>
 			<section className="main-page">
@@ -12,7 +13,7 @@ function MainPage() {
 				</div>
 				<h1> Stream Saga </h1>
 
-				<SearchBar />
+				<SearchBar setShowsData={setShowsData} />
 			</section>
 
 			<div className="main-page__home-button">
@@ -38,12 +39,13 @@ function MainPage() {
 					thoughts and recommendations.
 				</p>
 				<p>
-					We're powered by the <b>Episodate API</b>, which ensures that our
-					show database is up to date and accurate. Explore a diverse
-					range of shows and access detailed information to enhance
-					your viewing experience. Our logo was created with the help
-					of <b>FreeLogoDesign</b>, a fantastic platform for designing
-					eye-catching logos that represent our brand's essence.
+					We're powered by the <b>Episodate API</b>, which ensures
+					that our show database is up to date and accurate. Explore a
+					diverse range of shows and access detailed information to
+					enhance your viewing experience. Our logo was created with
+					the help of <b>FreeLogoDesign</b>, a fantastic platform for
+					designing eye-catching logos that represent our brand's
+					essence.
 				</p>
 				<p>
 					Join us in the exciting journey of entertainment

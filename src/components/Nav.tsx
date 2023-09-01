@@ -1,7 +1,8 @@
 import { useLocation } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import { SetShowsDataFunction } from "../App";
 
-function Nav() {
+function Nav({ setShowsData }: { setShowsData: SetShowsDataFunction }) {
 	const location = useLocation();
 	const isMainPage = location.pathname === "/";
 
@@ -21,7 +22,7 @@ function Nav() {
 						<a href="/home">Home</a>
 					</li>
 
-					{ isMainPage ? null : <SearchBar /> }
+					{ isMainPage ? null : <SearchBar setShowsData={setShowsData} /> }
 
 					<li>
 						<a href="/about">About</a>

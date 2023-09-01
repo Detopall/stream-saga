@@ -13,7 +13,7 @@ function Nav({ setShowsData }: { setShowsData: SetShowsDataFunction }) {
 					<li>
 						<a href="/" className="navbar__logo">
 							<img
-								src="stream-saga-logo.png"
+								src="/stream-saga-logo.png"
 								alt="logo"
 							/>
 						</a>
